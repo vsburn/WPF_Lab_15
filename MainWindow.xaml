@@ -1,0 +1,327 @@
+﻿<Window x:Class="WPF_Lab_15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Lab_15"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="header1">
+            <Setter Property="TextBlock.FontFamily" Value="Arial"/>
+            <Setter Property="TextBlock.FontSize" Value="20"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+            <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+            <Setter Property="TextBlock.Padding" Value="10"/>
+
+        </Style>
+        <Style x:Key="header2">
+            <Setter Property="TextBlock.FontFamily" Value="Arial"/>
+            <Setter Property="TextBlock.FontSize" Value="18"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+            <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="lead">
+            <Setter Property="TextBlock.FontFamily" Value="Arial"/>
+            <Setter Property="TextBlock.FontSize" Value="16"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+            <Setter Property="TextBlock.FontStyle" Value="Italic"/>
+            <Setter Property="TextBlock.Padding" Value="10,0,0,0"/>
+        </Style>
+        <Style x:Key="text">
+            <Setter Property="TextBlock.FontFamily" Value="Arial"/>
+            <Setter Property="TextBlock.FontSize" Value="14"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Justify"/>
+        </Style>
+        <Style x:Key="code">
+            <Setter Property="TextBlock.FontFamily" Value="Lucida Console"/>
+            <Setter Property="TextBlock.FontSize" Value="14"/>
+            <Setter Property="TextBlock.TextAlignment" Value="Justify"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph Style="{StaticResource header1}">
+                    Модуль math
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    <Bold>Аннотация.</Bold> Урок посвящен модулю
+                    <Span FontFamily="Lucida Console">math</Span> , который содержит математические функции по работе с вещественными числами.
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Модули
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Как уже говорилось, одним из преимуществ языка Python является множество разнообразных функций, которые уже реализованы и готовы к использованию. Такие функции упакованы в модули. В Python модулем называется библиотека функций, которую можно подключать к своим программам
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Модуль math
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Модуль
+                    <Span FontFamily="Lucida Console">math</Span> – один из наиважнейших в Python. Этот модуль предоставляет обширный функционал для проведения вычислений с вещественными числами (числами с плавающей точкой).
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Для использования этих функций в начале программы необходимо подключить модуль, что делается командой
+                    <Bold>import</Bold> :
+                </Paragraph>
+                <Section Padding="5" Background="#FFECEAEA">
+                    <Paragraph Margin="15" Style="{StaticResource code}">
+                        import math
+                        <LineBreak/>
+                        # программный код
+                    </Paragraph>
+                </Section>
+                <Paragraph Style="{StaticResource header2}">
+                    Особенности подключения модулей
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Как можно заметить из примера выше, для вызова функции мы вынуждены указывать название модуля и символ точки. С другой стороны, если функции используются достаточно часто, то такой вызов (постоянное указание названия модуля и символа точки) может усложнить программу и сделать её менее читабельной. Для того, чтобы не указывать название модуля и символ точки при вызове функций, мы пишем следующий код:
+                </Paragraph>
+                <Section Padding="5" Background="#FFECEAEA">
+                    <Paragraph Margin="15" Style="{StaticResource code}">
+                        from math import *
+                    </Paragraph>
+                </Section>
+                <Paragraph Style="{StaticResource text}">
+                    Подключение модуля таким образом позволяет не писать название модуля и символ точки. При таком способе подключения, импортируются абсолютно все функции модуля
+                    <Span FontFamily="Lucida Console">math</Span> .
+                </Paragraph>
+                <Paragraph Style="{StaticResource header2}">
+                    Список функций модуля math
+                </Paragraph>
+                <Paragraph Style="{StaticResource text}">
+                    Список наиболее часто используемых функций модуля
+                    <Span FontFamily="Lucida Console">math</Span> :
+                </Paragraph>
+                <Table CellSpacing="10" BorderThickness="1" BorderBrush="LightGray">
+                    <Table.Columns>
+                        <TableColumn Width="15*"/>
+                        <TableColumn />
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow Background="#FFECEAEA">
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    <Bold>Функция</Bold>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    <Bold>Описание</Bold>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    int()
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Округляет число в сторону нуля
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    round(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Округляет число x до ближайшего целого. Если дробная часть числа равна 0.5, то число округляется до ближайшего четного числа
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    round(x, n)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Округляет число x до n знаков после точки
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    floor(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Округляет число x вниз («пол»)
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    ceil(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Округляет число x вверх («потолок»)
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    abs(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Модуль числа x (абсолютная величина)
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    sqrt(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Квадратный корень числа x
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    pow(x, n)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Возведение числа x в степень n
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    log(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Натуральный логарифм числа x. Основание натурального логарифма равно числу e
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    factorial(n)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Факториал натурального числа n
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    cos(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Косинус угла x, задаваемого в радианах
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    sin(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Синус угла x, задаваемого в радианах
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    degrees(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Преобразует угол x, заданный в радианах, в градусы
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource code}">
+                                    radians(x)
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Style="{StaticResource text}">
+                                    Преобразует угол x, заданный в градусах, в радианы
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+                <Section Padding="5">
+                    <Paragraph Margin="15" Style="{StaticResource text}">
+                        <Floater Width="50" HorizontalAlignment="Left">
+                            <BlockUIContainer>
+                                <Image Source="IMG/1.png"/>
+                            </BlockUIContainer>
+                        </Floater>
+                        Для извлечения квадратного корня можно воспользоваться кодом
+                        <Span FontFamily="Lucida Console">n ** 0.5</Span> ,
+                        <LineBreak/> вместо
+                        <Span FontFamily="Lucida Console">math.sqrt(n)</Span>.
+                    </Paragraph>
+                </Section>
+                <Paragraph Style="{StaticResource header2}">
+                    Примечания
+                </Paragraph>
+                <List MarkerStyle="Decimal">
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            Все функции модуля
+                            <Span FontFamily="Lucida Console">math</Span> возвращают значение, которое можно вывести на экран, присвоить другой переменной или использовать в математическом выражении.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            Для использования функций
+                            <Span FontFamily="Lucida Console">int(), float(), abs(), min(), max(), round()</Span> подключать модуль
+                            <Span FontFamily="Lucida Console">math</Span> нет необходимости. Это так называемые встроенные функции.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Style="{StaticResource text}">
+                            Вызов функций
+                            <Span FontFamily="Lucida Console">pow(x, n)</Span> можно заменить использованием оператора возведения в степень:
+                            <Span FontFamily="Lucida Console">x**n</Span> .
+                        </Paragraph>
+                    </ListItem>
+                </List>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>
